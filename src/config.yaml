@@ -1,0 +1,130 @@
+################## Configuration for starting a new training task from scratch. ##################
+# default float is torch.float32; default int is torch.long
+
+exp_dir: log  # save training outputs in /log
+
+model:
+  n_layers: 2
+  dim: 512  # must be even due to bi-gru we have in model
+  dropout: 0.1
+  glove_path: "data/glove.840B.300d.txt"
+  temp: 0.07
+  topk: 1
+
+train:
+  dev: false  # set true to debug training codes.
+  init_lr: 0.0001
+  clip_norm: 1.0
+
+##### tasks #####
+# This is to be given by python arguments.
+#dataset_name: activitynetcaptions
+#dataset_name: charadessta
+#dataset_name: tacos
+
+activitynetcaptions:
+  feature_dir: data/activitynetcaptions/c3d
+  feature_dim: 500
+  video_feature_len: 256
+  batch_size: 256
+  clip_frames:
+    - 16
+  stride: 8
+  sigma_factor: 0.4
+  epoch: 30
+
+  moment_length_factors:
+    - 0.05
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.5
+    - 0.7
+    - 0.9
+    - 1.0
+  overlapping_factors:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    - 0.6
+    - 0.7
+    - 0.8
+    - 0.9
+
+charadessta:
+  feature_dir: data/charadessta/c3d
+  feature_dim: 4096
+  video_feature_len: 256
+  batch_size: 256
+
+#  feature_dir: data/charadessta/i3d
+#  feature_dim: 1024
+#  video_feature_len: 128
+#  batch_size: 512
+
+#  feature_dir: data/charadessta/vgg
+#  feature_dim: 4096
+#  video_feature_len: 256
+#  batch_size: 256
+
+  clip_frames:
+    - 8
+  stride: 4
+  sigma_factor: 0.3
+  epoch: 30
+
+  moment_length_factors:
+    - 0.1
+    - 0.15
+    - 0.2
+    - 0.25
+    - 0.3
+    - 0.35
+    - 0.4
+  overlapping_factors:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    - 0.6
+    - 0.7
+    - 0.8
+    - 0.9
+
+tacos:
+  feature_dir: data/tacos/c3d
+  feature_dim: 4096
+  video_feature_len: 512
+  batch_size: 128
+  clip_frames:
+    - 32
+  stride: 16
+  sigma_factor: 1.0
+  epoch: 80
+
+  moment_length_factors:
+    - 0.05
+    - 0.1
+    - 0.15
+    - 0.2
+    - 0.25
+    - 0.3
+    - 0.35
+    - 0.4
+  overlapping_factors:
+    - 0.0
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    - 0.6
+    - 0.7
+    - 0.8
+    - 0.9
+
