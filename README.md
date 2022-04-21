@@ -1,6 +1,8 @@
 # ViGA: Video moment retrieval via Glance Annotation
 This is the official repository of the paper "Video Moment Retrieval from Text Queries via Single Frame Annotation" published in SIGIR 2022.
 
+https://arxiv.org/abs/2204.09409
+
 ##  Dependencies
 This project has been tested on the following conda environment.
 ```
