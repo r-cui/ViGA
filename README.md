@@ -86,7 +86,7 @@ Downloaded from https://github.com/microsoft/2D-TAN. We extracted the features f
 Folder contains 127 `vid.npy`s, each of shape (T, 4096).
 #### annotation
 Downloaded from https://github.com/microsoft/2D-TAN
-## 2. Run
+## Run
 Our models were trained using the following commands.
 ```
 (viga)$ CUDA_VISIBLE_DEVICES=0 python -m src.experiment.train --task activitynetcaptions
