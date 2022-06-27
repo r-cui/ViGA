@@ -64,7 +64,7 @@ Downloaded from https://cs.stanford.edu/people/ranjaykrishna/densevid/
 ### 2. Charades-STA
 #### c3d feature 
 
-We extracted the C3D features of Charades-STA by ourselves, we decided not to make it available for downloading due to our limited resource of online storage, and the fact that this process can be easily replicated. To specify, we directly adopted the C3D model weights pre-trained on Sports1M. The extracted feature of each clip in a video was the fc6 layer, and the clips were sampled via sliding window of step size of 8, window size of 16. Our codes for this extraction were based on this repo. https://github.com/DavideA/c3d-pytorch
+We extracted the C3D features of Charades-STA by ourselves. We decided not to make it available for downloading due to our limited resource of online storage, and the fact that this process can be easily replicated. To specify, we directly adopted the C3D model weights pre-trained on Sports1M. The extracted feature of each clip in a video was the `fc6` layer, and the clips were sampled via sliding window of `step size of 8, window size of 16`. Our codes for this extraction were based on this repo. https://github.com/DavideA/c3d-pytorch
 
 Folder contains 9848 `vid.npy`s, each of shape (T, 4096).
 
